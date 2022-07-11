@@ -1,4 +1,4 @@
-class Article {
+class Article implements IArticle {
 
     public title : string;
     public short_intro : string;

@@ -15,6 +15,7 @@ class Page {
         document.body.appendChild(url);
         url.innerText = this.url;
         for (const article of this.articles) {
+            let article_p;
             let art = document.createElement('article');
             document.body.appendChild(art);
             let art_title = document.createElement('h2');
@@ -27,6 +28,12 @@ class Page {
                 let para = document.createElement('p');
                 para.innerText = content;
                 art.appendChild(para);
+            }
+            if (article.constructor === ArticlePhoto.prototype.constructor) {
+                article_p = article;
+                let main_img = document.createElement('img');
+                main_img.src = article_p.main_photo;
+                art.appendChild(main_img);
             }
         }
     }

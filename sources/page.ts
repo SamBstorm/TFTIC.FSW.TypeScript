@@ -2,7 +2,7 @@ class Page{
 
     public url : string;
     public title : string;
-    public articles : Article[] = [];
+    public articles : IArticle[] = [];
     
     constructor(title : string, url : string){
         this.title = title;
@@ -20,6 +20,7 @@ class Page{
         document.body.appendChild(url);
         url.innerText = this.url;
         for (const article of this.articles) {
+            let article_p : ArticlePhoto;
             let art : HTMLElement = document.createElement('article');
             document.body.appendChild(art);
             let art_title: HTMLHeadingElement = document.createElement('h2');
@@ -33,6 +34,13 @@ class Page{
                 para.innerText = content;
                 art.appendChild(para);
             }
+            if(article.constructor === ArticlePhoto.prototype.constructor) {
+                article_p = article as ArticlePhoto;
+                let main_img : HTMLImageElement = document.createElement('img');
+                main_img.src = article_p.main_photo;
+                art.appendChild(main_img);
+            }
+
         }
     }
 }
