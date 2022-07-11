@@ -57,3 +57,8 @@ window.onload = () => {
     index.addArticle(json_article);
     index.generatePage();
 };
+let dictionnaire = new Map();
+dictionnaire.set("BE55", "Keanu Reeves");
+dictionnaire.set("BE33", "Bruce Willis");
+dictionnaire.get("BE55");
+dictionnaire.set("BE55", "Mario Cotillard");
