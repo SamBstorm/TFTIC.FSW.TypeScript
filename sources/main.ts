@@ -15,6 +15,7 @@ const ask_number = function() : number{
     result = parseInt(input);
     return result;
 }*/
+/*
 let user : User = new User("Samuel", undefined, 'M');
 
 let login : string;
@@ -41,4 +42,11 @@ if(user.check_login(login, pwd)) {
     console.log(user.password);
 }
 else console.warn(`Mauvaises informations encodées...`);
+*/
+window.onload = () => {
+    let index: Page = new Page('Le typescript selon Microsoft', 'https://google.be/');
+    index.addArticle(new Article('Les variables sont typées!', 'Une variable typescript obtient un ou plusieurs types fix', 'Paragraph 1 lorem ipsum', 'Paragraph 2 lorem ipsum', 'Paragraph 3 lorem ipsum'));
+    index.addArticle(new Article('Les type Tableau', 'Les variables n\'ont qu\'une seule valeur, sauf si c\'est un tableau', 'Paragraph 1 lorem ipsum', 'Paragraph 2 lorem ipsum', 'Paragraph 3 lorem ipsum', 'Paragraph 4 lorem ipsum'));
 
+    index.generatePage();
+}
